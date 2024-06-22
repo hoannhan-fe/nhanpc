@@ -10,7 +10,6 @@ const Navbar = ({setShowLogin}) => {
 
         const[menu,setMenu] =useState("home");
         const{getTotalCartAmpount} = useContext(StoreContext);
-
   return (
     <div className='navbar'>
        <Link to='/'> <img src={assets.logo} alt="" className='logo' /></Link>
@@ -27,10 +26,8 @@ const Navbar = ({setShowLogin}) => {
             <div className={getTotalCartAmpount()===0?"":"dot"}></div>
         </div>
         <button onClick={()=>setShowLogin(true)}>sign in</button>
-        
       </div>
     </div>
   )
 }
-
 export default Navbar;

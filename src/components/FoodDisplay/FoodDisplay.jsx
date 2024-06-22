@@ -21,13 +21,11 @@ const FoodDisplay = ({ category }) => { // Thêm dấu ngoặc nhọn để nh�
                 price={item.price}
                 image={item.image}
               />
-            );
-          }
+            );}
           return null; // Thêm một dòng trả về null cho trường hợp không khớp
         })}
       </div>
     </div>
   );
 };
-
 export default FoodDisplay;
