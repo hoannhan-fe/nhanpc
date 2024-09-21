@@ -10,7 +10,7 @@ const FoodDisplay = ({ category }) => { // Thêm dấu ngoặc nhọn để nh�
       <h2>Top cửa hàng linh kiện PC</h2>
       <div className="food-display-list">
         {food_list.map((item, index) => {
-          console.log(category, item.category);
+          // console.log(category, item.category);
           if (category === "All" || category === item.category) {
             return ( // Di chuyển dấu ngoặc nhọn xuống dòng mới và sửa lỗi kỹ thuật
               <Fooditem

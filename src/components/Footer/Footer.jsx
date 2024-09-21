@@ -44,7 +44,7 @@ const Footer = () => {
           <h2>GET IN TOUCH</h2>
           <ul>
             <li>+84 9889 54542</li>
-            <li>nguyenhoannhan.nnn@gmail.com</li>
+            <li>nhanhoan458@gmail.com</li>
           </ul>
         </div>
       </div>

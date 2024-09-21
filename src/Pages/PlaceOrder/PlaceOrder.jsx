@@ -33,6 +33,18 @@ const PlaceOrder = () => {
         orderItems.push(itemInfo);
       }
     });
+    let orderData = {
+      address: data,
+      items:orderItems,
+      amount: getTotalCartAmpount()+2,
+    }
+    let response = await axios.post(url + "/api/order/place",orderData,{headers:{token}}); 
+    if (response.data.success) {
+      const {session_url} = response.data;
+      window.location.replace(session_url);
+    } else {
+      alert("Error");
+    }
   };
   
   
@@ -43,14 +55,14 @@ const PlaceOrder = () => {
       <div className="place-order-left">
         <p className="title">Delivery Information</p>
         <div className="multi-fields">
-          <input
+          <input required
             name="firstName"
             onChange={onChangeHandler}
             value={data.firstName}
             type="text"
             placeholder="First Name"
           />
-          <input
+          <input required
             name="lastName"
             onChange={onChangeHandler}
             value={data.lastName}
@@ -58,14 +70,14 @@ const PlaceOrder = () => {
             placeholder="Last  Name"
           />
         </div>
-        <input
+        <input required
           name="email"
           onChange={onChangeHandler}
           value={data.email}
           type="email"
           placeholder="Email address"
         />
-        <input
+        <input required
           name="street"
           onChange={onChangeHandler}
           value={data.street}
@@ -73,14 +85,14 @@ const PlaceOrder = () => {
           placeholder="Street"
         />
         <div className="multi-fields">
-          <input
+          <input required
             name="city"
             onChange={onChangeHandler}
             value={data.city}
             type="text"
             placeholder="City"
           />
-          <input
+          <input required
             name="state"
             onChange={onChangeHandler}
             value={data.state}
@@ -89,14 +101,14 @@ const PlaceOrder = () => {
           />
         </div>
         <div className="multi-fields">
-          <input
+          <input required
             name="zipcode"
             onChange={onChangeHandler}
             value={data.zipcode}
             type="text"
             placeholder="Zip Code"
           />
-          <input
+          <input required
             name="country"
             onChange={onChangeHandler}
             value={data.country}
@@ -104,7 +116,7 @@ const PlaceOrder = () => {
             placeholder="Country"
           />
         </div>
-        <input
+        <input required
           name="phone"
           onChange={onChangeHandler}
           value={data.phone}
